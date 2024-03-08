@@ -9,13 +9,290 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; 
   margin: auto;
+  margin-top: 25vh;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+}
+
+.content {
+  display: flex;
+  flex-direction: row; 
+  justify-content: flex-start; 
+  align-items: flex-end; 
+  width: 1134px;
+  height: 534px;
+  gap: 30px;
+}
+
+.content__details {
+  flex-grow: 1;
+}
+
+.result {
+  width: 711px;
+  height: 386px;
+  margin-bottom: 60px;
+}
+
+.result__video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.result__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-form {
+  display: flex;
+  justify-content: flex-start;
+  width: 711px;
+  height: 54px;
+}
+
+.search-form__fieldset {
+  flex-grow: 1;
+  border: none;
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 400;
+  font: inherit;
+  padding-bottom: 5px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.search-form__textfield {
+  color: gray;
+  background-color: transparent;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 2px;
+  border-bottom: 2px;
+  border-color: white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+}
+
+.search-form__label {
+  width: fit-content;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-form__label-text {
+  font-size: 18px;
+}
+
+.search-form__textfield {
+  appearance: none; 
+  max-width: 225px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 2px;
+  font-size: 17px;
+  gap: 10px;
+}
+
+.button {
+  cursor: pointer;
+  background-color: transparent;
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.search-form__submit-button {
+  display: block;
+  width: 194px;
+  height: 34px;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.more-button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.title {
+  font-family: "Oswald";
+  font-size: 75px;
+  font-weight: 700;
+  max-width: 260px;
+  line-height: 75px;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: rgb(84, 80, 80, 0.6);
+}
+
+.content__list {
+  position: relative;
+  max-height: 298px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  gap: 30px;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.cards-list-item-template {
+  margin: 0;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.content__video-card-title {
+  font-family: "Oswald";
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  padding: 0px 10px;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+}
+
+.content__video-card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content__video-card-description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  font-family: "Fira Sans Condensed";
+}
+
+.visually-hidden {
+  position: absolute; /* элемент вырывают из потока */
+  width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
+  height: 1px;
+  margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
+  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
+  border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
+  clip: rect(
+    0 0 0 0
+  ); /* это свойство обрезает видимую область до нулевого значения */
+  overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
+}
+
+/* Сброс обводки у текстового поля в состоянии фокуса */
+.search-form__label:has(:focus-visible) {
+  border: 1px solid #007bff;
+}
+
+/* Активный чекбокс */
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  margin-top: 15%;
+  background-color: #fff;
+}
+
+/* Подчеркивание текста у чекбокса при наведении на лейбл */
+.search-form__checkbox-label:hover span::before {
+  text-decoration: underline;
+}
+
+.button:hover,
+.search-form__submit-button:hover,
+.more-button:hover {
+  text-decoration: underline;
+}
+
+.button:active,
+.search-form__submit-button:active,
+.more-button:active {
+  background-color: #545050;
+}
+
+/* Сброс состояния :focus */
+.button:focus,
+.search-form__submit-button:focus,
+.more-button:focus {
+  outline: 1px solid white;
+}
+
+/* Текущая карточка */
+.content__card-link {
+  display: block; /* Делаем ссылку блочным элементом */
+}
+
+/* Другие состояния карточки */
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+/* Цвет фона для активной карточки */
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  margin: -2px;
 }
 
 h1,
