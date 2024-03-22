@@ -76,6 +76,7 @@ html {
 .search-form {
   display: flex;
   justify-content: flex-start;
+  align-items: end;
   width: 711px;
 }
 
@@ -98,11 +99,9 @@ html {
 
 .search-form__pseudo-checkbox {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 19px;
+  height: 19px;
   border: 1px solid white;
-  border-radius: 3px;
-  margin-right: 5px;
 }
 
 .search-form__textfield {
@@ -141,6 +140,7 @@ html {
   cursor: pointer;
   background-color: transparent;
   font-family: "Fira Sans Condensed", sans-serif;
+  border-color: #fff;
   font-size: 18px;
   font-weight: 700;
   color: #fff;
@@ -150,6 +150,7 @@ html {
 .search-form__submit-button {
   width: 194px;
   height: 34px;
+  
 }
 
 .more-button {
@@ -256,11 +257,11 @@ html {
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   content: "";
   display: block;
-  width: 70%;
-  height: 70%;
+  width: 85%;
+  height: 85%;
   margin: auto;
-  margin-top: 15%;
   background-color: #fff;
+  margin-top: 7.5%;
 }
 
 /* Подчеркивание текста у чекбокса при наведении на лейбл */
