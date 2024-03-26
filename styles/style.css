@@ -35,13 +35,14 @@ html {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  min-height: 100%;
 }
 
 .content {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
   width: 1134px;
   gap: 30px;
 }
@@ -53,7 +54,6 @@ html {
 .result {
   width: 711px;
   height: 386px;
-  margin-bottom: 60px;
 }
 
 .result__video-container {
@@ -76,8 +76,9 @@ html {
 .search-form {
   display: flex;
   justify-content: flex-start;
-  align-items: end;
+  align-items: flex-end;
   width: 711px;
+  padding-top: 11px;
 }
 
 .search-form__fieldset {
@@ -95,6 +96,7 @@ html {
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
+  width: 212px;
 }
 
 .search-form__pseudo-checkbox {
@@ -117,6 +119,8 @@ html {
   gap: 10px;
   font-weight: 400;
   line-height: 21.6px;
+  font-family: inherit;
+  width: 225px;
 }
 
 .search-form__textfield:focus {
@@ -140,23 +144,20 @@ html {
   cursor: pointer;
   background-color: transparent;
   font-family: "Fira Sans Condensed", sans-serif;
-  border-color: #fff;
+  border: 1px solid #fff;
   font-size: 18px;
   font-weight: 700;
   color: #fff;
   margin-top: 10px;
+  height: 34px;
 }
 
 .search-form__submit-button {
   width: 194px;
-  height: 34px;
-  
 }
 
 .more-button {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
 }
 
 .title {
@@ -166,6 +167,7 @@ html {
   max-width: 260px;
   line-height: 75px;
   text-transform: uppercase;
+  margin-bottom: 26px;
 }
 
 .content__accent {
@@ -185,6 +187,7 @@ html {
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: #fff;
   margin: 2px 2px;
@@ -209,7 +212,6 @@ html {
 
 .content__video-card-description-container {
   flex-grow: 1;
-  padding: 0px 10px;
 }
 
 .content__video-card-thumbnail {
@@ -265,7 +267,7 @@ html {
 }
 
 /* Подчеркивание текста у чекбокса при наведении на лейбл */
-.search-form__checkbox-label:hover span::before {
+.search-form__checkbox-label:hover {
   text-decoration: underline;
 }
 
@@ -279,6 +281,10 @@ html {
 
 /* Сброс состояния :focus */
 .button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
   outline: 1px solid white;
 }
 
