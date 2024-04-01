@@ -268,18 +268,10 @@ html {
   margin-top: 7.5%;
 }
 
-/* Подчеркивание текста у чекбокса при наведении на лейбл */
-.search-form__checkbox-label:hover {
-  text-decoration: underline;
-}
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text { 
   text-decoration: underline;
-}
-
-.search-form__label-text:hover {
-  text-decoration: underline;
-}
+} 
 
 .button:hover {
   text-decoration: underline;
